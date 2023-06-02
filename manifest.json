@@ -1,25 +1,26 @@
 {
-  "name": "@deskpro-apps/my-app",
-  "title": "My App",
+  "name": "@deskpro-apps/simple-mdm",
+  "title": "SimpleMDM",
   "description": "My Deskpro app",
   "version": "0.0.1",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,
-  "targets": [{ "target": "ticket_sidebar", "entrypoint": "index.html" }],
+  "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
   "settings": {
-    "example": {
-      "title": "Example Setting",
-      "description": "Example backend only setting",
+    "api_key": {
+      "title": "API Key",
+      "description": "",
       "type": "string",
-      "isRequired": false,
-      "isBackendOnly": true
+      "isRequired": true,
+      "isBackendOnly": true,
+      "order": 10
     }
   },
   "proxy": {
     "whitelist": [
       {
-        "url": "https://jsonplaceholder.typicode.com/.*",
+        "url": "https://a.simplemdm.com/api/v1/.*",
         "methods": ["GET"],
         "timeout": 20
       }

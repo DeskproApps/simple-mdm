@@ -1,14 +1,16 @@
+import { useEffect } from "react";
 import { useNavigate } from "react-router-dom";
-import { useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
+// import { useInitialisedDeskproAppClient } from "@deskpro/app-sdk";
 
 type UseCheckIsAuth = () => void;
 
 const useCheckIsAuth: UseCheckIsAuth = () => {
   const navigate = useNavigate();
 
-  useInitialisedDeskproAppClient(() => {
-    navigate("/home")
-  }, [navigate]);
+  // useInitialisedDeskproAppClient(() => {
+  //   navigate("/home")
+  // }, [navigate]);
+  useEffect(() => navigate("/link"), [navigate]);
 };
 
 export { useCheckIsAuth };

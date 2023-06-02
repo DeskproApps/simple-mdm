@@ -2,13 +2,14 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
 import {
-  LoadingSpinner,
+  // LoadingSpinner,
   useDeskproAppClient,
   useDeskproAppEvents,
 } from "@deskpro/app-sdk";
 import { isNavigatePayload } from "./utils";
 import {
   HomePage,
+  LinkPage,
   LoadingAppPage,
 } from "./pages";
 import type { FC } from "react";
@@ -37,15 +38,16 @@ const App: FC = () => {
     onElementEvent: debounceElementEvent,
   }, [client]);
 
-  if (!client) {
-    return (
-      <LoadingSpinner/>
-    );
-  }
+  // if (!client) {
+  //   return (
+  //     <LoadingSpinner/>
+  //   );
+  // }
 
   return (
     <>
       <Routes>
+        <Route path="/link" element={<LinkPage/>} />
         <Route path="/home" element={<HomePage/>} />
         <Route index element={<LoadingAppPage/>} />
       </Routes>

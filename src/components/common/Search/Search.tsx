@@ -2,6 +2,7 @@ import { faSearch, faTimes, faSpinner } from "@fortawesome/free-solid-svg-icons"
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Input, IconButton } from "@deskpro/app-sdk";
 import { Label } from "../Label";
+import type { FC } from "react";
 import type { InputProps, AnyIcon } from "@deskpro/deskpro-ui";
 
 export type Props = {
@@ -14,7 +15,7 @@ export type Props = {
   isFetching?: boolean,
 };
 
-const Search: React.FC<Props> = ({
+const Search: FC<Props> = ({
   value,
   label,
   onClear,

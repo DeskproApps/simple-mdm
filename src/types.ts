@@ -34,16 +34,30 @@ export type RequestParams = {
 export type Request = <T>(
   client: IDeskproClient,
   params: RequestParams,
-) => Promise<T>;
+) => Promise<{ data: T, has_more: boolean }>;
 
 /** Deskpro types */
-export type Settings = {
-  api_key?: string,
+export type DeskproUser = {
+  emails: string[],
+  firstName: string,
+  id: string,
+  isAgent: boolean,
+  isConfirmed: boolean,
+  isDisabled: boolean,
+  lastName: string,
+  name: string,
+  primaryEmail: string,
+  titlePrefix: string,
 };
 
-export type TicketData = object;
+export type ContextData = {
+  app: never,
+  currentAgent: never,
+  env: never,
+  user: DeskproUser,
+};
 
-export type TicketContext = Context<TicketData, Maybe<Settings>>;
+export type UserContext = Context<ContextData>;
 
 export type NavigateToChangePage = { type: "changePage", path: To };
 

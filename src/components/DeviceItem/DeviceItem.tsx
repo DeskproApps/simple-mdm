@@ -1,46 +1,46 @@
-import { useCallback } from "react";
+import { useMemo, useCallback } from "react";
 import get from "lodash/get";
 import { Title } from "@deskpro/app-sdk";
-import { Link, SimpleMDMLogo, TwoProperties } from "../common";
+import { Link, SimpleMDMLogo, Property, TwoProperties } from "../common";
 import type { FC } from "react";
+import type { Device } from "../../services/simple-mdm/types";
 
 type Props = {
-  // eslint-disable-next-line
-  device: any,
-  onClickTitle: () => void,
+  device: Device,
+  onClickTitle?: () => void,
 };
 
 const DeviceItem: FC<Props> = ({ device, onClickTitle }) => {
+  const deviceName = useMemo(() => {
+    return get(device, ["attributes", "name"], "-")
+  }, [device]);
+
   const onClick = useCallback((e: MouseEvent) => {
     e.preventDefault();
-    // eslint-disable-next-line @typescript-eslint/ban-ts-comment
-    // @ts-ignore
-    onClickTitle && onClickTitle(device.id);
-  }, [onClickTitle, device]);
+    onClickTitle && onClickTitle();
+  }, [onClickTitle]);
 
   return (
-    <>
+    <div style={{ marginBottom: 10 }}>
       <Title
         title={!onClickTitle
-          ? get(device, ["name"], "-")
-          : (<Link href="#" onClick={onClick as never}>{get(device, ["name"], "-")}</Link>)
+          ? deviceName
+          : (<Link href="#" onClick={onClick as never}>{deviceName}</Link>)
         }
         icon={<SimpleMDMLogo/>}
-        link="https//:deskpro.com/apps"
+        link={`https://a.simplemdm.com/admin/devices/${device.id}`}
       />
       <TwoProperties
         leftLabel="Model"
-        leftText={get(device, ["model"], "-")}
+        leftText={get(device, ["attributes", "model_name"], "-")}
         rightLabel="OS version"
-        rightText={get(device, ["versionOS"], "-")}
+        rightText={get(device, ["attributes", "os_version"], "-")}
       />
-      <TwoProperties
-        leftLabel="Serial number"
-        leftText={get(device, ["serialNumber"], "-")}
-        rightLabel="Storage capacity"
-        rightText={get(device, ["storage"], "-")}
+      <Property
+        label="Serial number"
+        text={get(device, ["attributes", "serial_number"], "-")}
       />
-    </>
+    </div>
   );
 };
 

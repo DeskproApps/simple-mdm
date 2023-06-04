@@ -2,9 +2,9 @@ import { Routes, Route, useNavigate } from "react-router-dom";
 import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
 import {
-  // LoadingSpinner,
+  LoadingSpinner,
   useDeskproAppClient,
-  useDeskproAppEvents,
+  useDeskproAppEvents, useDeskproElements,
 } from "@deskpro/app-sdk";
 import { isNavigatePayload } from "./utils";
 import {
@@ -29,6 +29,10 @@ const App: FC = () => {
       .run();
   }, 500);
 
+  useDeskproElements(({ registerElement }) => {
+    registerElement("refresh", { type: "refresh_button" });
+  });
+
   useDeskproAppEvents({
     onShow: () => {
       client && setTimeout(() => client.resize(), 200);
@@ -38,11 +42,11 @@ const App: FC = () => {
     onElementEvent: debounceElementEvent,
   }, [client]);
 
-  // if (!client) {
-  //   return (
-  //     <LoadingSpinner/>
-  //   );
-  // }
+  if (!client) {
+    return (
+      <LoadingSpinner/>
+    );
+  }
 
   return (
     <>

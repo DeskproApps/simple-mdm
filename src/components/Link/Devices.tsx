@@ -1,19 +1,17 @@
 import { Fragment } from "react";
 import size from "lodash/size";
 import { Checkbox } from "@deskpro/deskpro-ui";
-import { HorizontalDivider, LoadingSpinner } from "@deskpro/app-sdk";
+import { LoadingSpinner } from "@deskpro/app-sdk";
 import { NoFound, Card, CardBody, CardMedia } from "../common";
 import { DeviceItem } from "../DeviceItem";
 import type { FC } from "react";
+import type { Device } from "../../services/simple-mdm/types";
 
 type Props = {
-  // eslint-disable-next-line
-  devices: any[],
+  devices: Device[],
   isLoading: boolean,
-  // eslint-disable-next-line
-  selectedDevices: any[],
-  // eslint-disable-next-line
-  onChangeSelectedDevices: (task: any) => void,
+  selectedDevices: Device[],
+  onChangeSelectedDevices: (device: Device) => void,
 };
 
 const Devices: FC<Props> = ({
@@ -29,7 +27,7 @@ const Devices: FC<Props> = ({
         {!Array.isArray(devices)
           ? <NoFound/>
           : !size(devices)
-            ? <NoFound text="No Asana tasks found"/>
+            ? <NoFound text="No device(s) found"/>
             : devices.map((device) => (
               <Fragment key={device.id}>
                 <Card>
@@ -48,7 +46,6 @@ const Devices: FC<Props> = ({
                     />
                   </CardBody>
                 </Card>
-                <HorizontalDivider style={{ marginBottom: 10 }} />
               </Fragment>
             ))
         }

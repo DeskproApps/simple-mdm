@@ -1,31 +1,26 @@
 import { HorizontalDivider } from "@deskpro/app-sdk";
-import { getOption } from "../../utils";
 import { Search, Container } from "../common";
-import { DeviceGroup } from "./DeviceGroup";
+import { DeviceGroups } from "./DeviceGroups";
 import { Controls } from "./Controls";
 import { Devices } from "./Devices";
 import type { FC, Dispatch } from "react";
 import type { Props as SearchProps } from "../common/Search";
+import type { Device, DeviceGroup } from "../../services/simple-mdm/types";
 
 type Props = {
   search: string,
   onChangeSearch: SearchProps["onChange"],
   onClearSearch: SearchProps["onClear"],
-  // eslint-disable-next-line
-  deviceGroups: any[],
-  // eslint-disable-next-line
-  selectedDeviceGroup: any,
-  // eslint-disable-next-line
-  onChangeDeviceGroup: Dispatch<any>,
-  // eslint-disable-next-line
-  selectedDevices: any[],
+  deviceGroups: DeviceGroup[],
+  selectedDeviceGroup: "any"|DeviceGroup["id"],
+  onChangeDeviceGroup: Dispatch<"any"|DeviceGroup["id"]>,
+  selectedDevices: Device[],
   isSubmitting: boolean,
   onLinkDevices: () => void,
   onCancel: () => void,
-  // eslint-disable-next-line
-  onChangeSelectedDevices: (device: any) => void,
-  // eslint-disable-next-line
-  devices: any[],
+  onChangeSelectedDevices: (device: Device) => void,
+  devices: Device[],
+  isLoading: boolean,
 };
 
 const Link: FC<Props> = ({
@@ -41,6 +36,7 @@ const Link: FC<Props> = ({
   onCancel,
   onChangeSelectedDevices,
   devices,
+  isLoading,
 }) => {
   return (
     <>
@@ -50,10 +46,10 @@ const Link: FC<Props> = ({
           onChange={onChangeSearch}
           onClear={onClearSearch}
         />
-        <DeviceGroup
+        <DeviceGroups
           value={selectedDeviceGroup}
           onChange={(o) => onChangeDeviceGroup(o.value)}
-          options={deviceGroups.map(({ id, name }) => getOption(id, name))}
+          deviceGroups={deviceGroups}
         />
         <Controls
           onCancel={onCancel}
@@ -68,7 +64,7 @@ const Link: FC<Props> = ({
       <Container>
         <Devices
           devices={devices}
-          isLoading={false}
+          isLoading={isLoading}
           selectedDevices={selectedDevices}
           onChangeSelectedDevices={onChangeSelectedDevices}
         />

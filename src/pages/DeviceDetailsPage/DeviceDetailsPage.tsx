@@ -24,7 +24,7 @@ const DeviceDetailsPage: FC = () => {
     registerElement("menu", {
       type: "menu",
       items: [{
-        title: "Unlink task",
+        title: "Unlink device",
         payload: { type: "unlink", deviceId },
       }],
     });

@@ -4,6 +4,7 @@ import type {
   IDeskproClient,
   DropdownValueType,
 } from "@deskpro/app-sdk";
+import type { Device } from "./services/simple-mdm/types";
 
 /** Common types */
 export type Maybe<T> = T | undefined | null;
@@ -63,6 +64,7 @@ export type NavigateToChangePage = { type: "changePage", path: To };
 
 export type EventPayload =
   | NavigateToChangePage
+  | { type: "unlink", deviceId: Device["id"] }
 ;
 
 /** Entities */

@@ -118,3 +118,20 @@ export type Device = {
     custom_attribute_values: { data: [] }
   }
 }
+
+export type DeviceUser = {
+  type: "device_user",
+  id: number,
+  attributes: {
+    uid: number,
+    username: string,
+    full_name: string,
+    user_guid: string,
+    data_quota: null,
+    data_used: null,
+    data_to_sync: boolean,
+    secure_token: boolean,
+    logged_in: boolean,
+    mobile_account: boolean,
+  }
+};

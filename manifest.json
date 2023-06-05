@@ -1,7 +1,7 @@
 {
   "name": "@deskpro-apps/simple-mdm",
   "title": "SimpleMDM",
-  "description": "My Deskpro app",
+  "description": "View your enrolled Apple mobile devices while interacting with tickets to make management and support easier.",
   "version": "0.0.3",
   "scope": "agent",
   "isSingleInstall": false,

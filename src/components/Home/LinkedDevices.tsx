@@ -8,9 +8,10 @@ import type { Device } from "../../services/simple-mdm/types";
 type Props = {
   devices: Device[],
   onNavigateToLink: () => void,
+  onNavigateToDevice: (deviceId: Device["id"]) => void,
 };
 
-const LinkedDevices: FC<Props> = ({ devices, onNavigateToLink }) => {
+const LinkedDevices: FC<Props> = ({ devices, onNavigateToLink, onNavigateToDevice }) => {
   return (
     <>
       <Container>
@@ -24,7 +25,11 @@ const LinkedDevices: FC<Props> = ({ devices, onNavigateToLink }) => {
           : !size(devices)
             ? <NoFound text="No device(s) found"/>
             : devices.map((device) => (
-              <DeviceItem key={device.id} device={device}/>
+              <DeviceItem
+                key={device.id}
+                device={device}
+                onClickTitle={() => onNavigateToDevice(device.id)}
+              />
             ))
         }
       </Container>

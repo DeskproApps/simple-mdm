@@ -4,6 +4,7 @@ import size from "lodash/size";
 import cloneDeep from "lodash/cloneDeep";
 import { useNavigate } from "react-router-dom";
 import {
+  useDeskproElements,
   useDeskproAppClient,
   useDeskproLatestAppContext,
 } from "@deskpro/app-sdk";
@@ -66,6 +67,15 @@ const LinkPage: FC = () => {
       .then(() => navigate("/home"))
       .catch(asyncErrorHandler);
   }, [client, dpUserId, selectedDevices, navigate, asyncErrorHandler]);
+
+  useDeskproElements(({ registerElement, clearElements }) => {
+    clearElements()
+    registerElement("refresh", { type: "refresh_button" });
+    registerElement("home", {
+      type: "home_button",
+      payload: { type: "changePage", path: "/home" },
+    });
+  });
 
   return (
     <Link

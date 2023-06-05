@@ -4,7 +4,6 @@ import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
 import {
   LoadingSpinner,
-  useDeskproElements,
   useDeskproAppClient,
   useDeskproAppEvents,
 } from "@deskpro/app-sdk";
@@ -34,10 +33,6 @@ const App: FC = () => {
       .with("unlink", () => unlinkDevice(get(payload, ["deviceId"])))
       .run();
   }, 500);
-
-  useDeskproElements(({ registerElement }) => {
-    registerElement("refresh", { type: "refresh_button" });
-  });
 
   useDeskproAppEvents({
     onShow: () => {

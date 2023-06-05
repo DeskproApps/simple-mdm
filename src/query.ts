@@ -13,6 +13,7 @@ const queryClient = new QueryClient({
 enum QueryKey {
   SEARCH_DEVICES = "searchDevices",
   DEVICE = "device",
+  DEVICE_USERS = "deviceUsers",
   LINKED_DEVICES = "linkedDevices",
   DEVICE_GROUPS = "deviceGroups",
 }

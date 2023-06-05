@@ -1,7 +1,8 @@
 import { useMemo, useCallback } from "react";
 import get from "lodash/get";
 import { Title } from "@deskpro/app-sdk";
-import { Link, SimpleMDMLogo, Property, TwoProperties } from "../common";
+import { nbsp } from "../../constants";
+import { Link, SimpleMDMLogo, TwoProperties } from "../common";
 import type { FC } from "react";
 import type { Device } from "../../services/simple-mdm/types";
 
@@ -36,9 +37,11 @@ const DeviceItem: FC<Props> = ({ device, onClickTitle }) => {
         rightLabel="OS version"
         rightText={get(device, ["attributes", "os_version"], "-")}
       />
-      <Property
-        label="Serial number"
-        text={get(device, ["attributes", "serial_number"], "-")}
+      <TwoProperties
+        leftLabel="Serial number"
+        leftText={get(device, ["attributes", "serial_number"], "-")}
+        rightLabel="Storage capacity"
+        rightText={`${get(device, ["attributes", "device_capacity"], "-")}${nbsp}GB`}
       />
     </div>
   );

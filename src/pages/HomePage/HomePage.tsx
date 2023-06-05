@@ -4,12 +4,17 @@ import { LoadingSpinner } from "@deskpro/app-sdk";
 import { useDevices } from "./hooks";
 import { Home } from "../../components";
 import type { FC } from "react";
+import type { Device } from "../../services/simple-mdm/types";
 
 const HomePage: FC = () => {
   const navigate = useNavigate();
   const { isLoading, devices } = useDevices();
 
   const onNavigateToLink = useCallback(() => navigate("/link"), [navigate]);
+
+  const onNavigateToDevice = useCallback((deviceId: Device["id"]) => {
+    navigate(`/device/${deviceId}`);
+  }, [navigate]);
 
   if (isLoading) {
     return (
@@ -21,6 +26,7 @@ const HomePage: FC = () => {
     <Home
       devices={devices}
       onNavigateToLink={onNavigateToLink}
+      onNavigateToDevice={onNavigateToDevice}
     />
   );
 };

@@ -7,6 +7,13 @@
   "isSingleInstall": false,
   "hasDevMode": true,
   "targets": [{ "target": "user_sidebar", "entrypoint": "index.html" }],
+  "entityAssociations": {
+    "linkedSimpleMDMDevice": {
+      "title": "Linked SimpleMDM Device",
+      "entity": "person",
+      "type": "external_id"
+    }
+  },
   "settings": {
     "api_key": {
       "title": "API Key",

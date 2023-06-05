@@ -4,11 +4,12 @@ import { match } from "ts-pattern";
 import {
   LoadingSpinner,
   useDeskproAppClient,
-  useDeskproAppEvents,
+  useDeskproAppEvents, useDeskproElements,
 } from "@deskpro/app-sdk";
 import { isNavigatePayload } from "./utils";
 import {
   HomePage,
+  LinkPage,
   LoadingAppPage,
 } from "./pages";
 import type { FC } from "react";
@@ -28,6 +29,10 @@ const App: FC = () => {
       .run();
   }, 500);
 
+  useDeskproElements(({ registerElement }) => {
+    registerElement("refresh", { type: "refresh_button" });
+  });
+
   useDeskproAppEvents({
     onShow: () => {
       client && setTimeout(() => client.resize(), 200);
@@ -46,6 +51,7 @@ const App: FC = () => {
   return (
     <>
       <Routes>
+        <Route path="/link" element={<LinkPage/>} />
         <Route path="/home" element={<HomePage/>} />
         <Route index element={<LoadingAppPage/>} />
       </Routes>

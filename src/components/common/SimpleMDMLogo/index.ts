@@ -1,0 +1,1 @@
+export { SimpleMDMLogo } from "./SimpleMDMLogo";

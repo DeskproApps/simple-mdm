@@ -1,16 +1,27 @@
-import { useDeskproElements } from "@deskpro/app-sdk";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
+import { LoadingSpinner } from "@deskpro/app-sdk";
+import { useDevices } from "./hooks";
+import { Home } from "../../components";
 import type { FC } from "react";
 
 const HomePage: FC = () => {
-  useDeskproElements(({ registerElement, clearElements  }) => {
-    clearElements();
-    registerElement("refresh", { type: "refresh_button" });
-  });
+  const navigate = useNavigate();
+  const { isLoading, devices } = useDevices();
+
+  const onNavigateToLink = useCallback(() => navigate("/link"), [navigate]);
+
+  if (isLoading) {
+    return (
+      <LoadingSpinner/>
+    );
+  }
 
   return (
-    <>
-      HomePage
-    </>
+    <Home
+      devices={devices}
+      onNavigateToLink={onNavigateToLink}
+    />
   );
 };
 

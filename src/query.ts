@@ -11,7 +11,10 @@ const queryClient = new QueryClient({
 });
 
 enum QueryKey {
-  //...
+  SEARCH_DEVICES = "searchDevices",
+  DEVICE = "device",
+  LINKED_DEVICES = "linkedDevices",
+  DEVICE_GROUPS = "deviceGroups",
 }
 
 export { queryClient, QueryKey };

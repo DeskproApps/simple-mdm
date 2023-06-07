@@ -20,7 +20,7 @@ const Controls: FC<Props> = ({
   <Stack justify="space-between" style={{ paddingBottom: "4px" }}>
     <Button
       type="button"
-      text="Link Issue"
+      text="Link Device"
       disabled={!size(selectedDevices) || isSubmitting}
       loading={isSubmitting}
       onClick={onLinkDevices}

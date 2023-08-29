@@ -13,6 +13,7 @@ import { useUnlinkDevice } from "./hooks";
 import {
   HomePage,
   LinkPage,
+  VerifySettings,
   LoadingAppPage,
   DeviceDetailsPage,
 } from "./pages";
@@ -57,6 +58,7 @@ const App: FC = () => {
   return (
     <>
       <Routes>
+        <Route path="/admin/verify_settings" element={<VerifySettings/>} />
         <Route path="/link" element={<LinkPage/>} />
         <Route path="/home" element={<HomePage/>} />
         <Route path="/device/:deviceId" element={<DeviceDetailsPage/>} />

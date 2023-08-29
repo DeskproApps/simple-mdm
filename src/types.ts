@@ -30,12 +30,17 @@ export type RequestParams = {
   data?: any,
   headers?: Dict<string>,
   queryParams?: string|Dict<string>|ParamKeyValuePair[],
+  settings?: Maybe<Settings>,
 };
 
 export type Request = <T>(
   client: IDeskproClient,
   params: RequestParams,
 ) => Promise<{ data: T, has_more: boolean }>;
+
+export type Settings = {
+  api_key?: string,
+};
 
 /** Deskpro types */
 export type DeskproUser = {

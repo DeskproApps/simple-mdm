@@ -1,10 +1,7 @@
 import type { DateTime } from "../../types";
 
 export type SimpleMDMAPIError = {
-  error: {
-    code: number,
-    message: string,
-  }
+  errors: Array<{ title: string }>,
 };
 
 export type Account  = {

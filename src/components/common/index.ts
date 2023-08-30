@@ -5,6 +5,5 @@ export { Label } from "./Label";
 export { Select } from "./Select";
 export { NoFound } from "./NoFound";
 export { Card, CardMedia, CardBody } from "./Card";
-export { Property, TwoProperties } from "./Property";
 export { Link } from "./Link";
 export { SimpleMDMLogo } from "./SimpleMDMLogo";

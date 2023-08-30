@@ -1,5 +1,5 @@
 import get from "lodash/get";
-import { Stack } from "@deskpro/app-sdk";
+import { Stack } from "@deskpro/deskpro-ui";
 import { SimpleMDMError } from "../../services/simple-mdm";
 import { ErrorBlock } from "./ErrorBlock";
 import { Container } from "../common";

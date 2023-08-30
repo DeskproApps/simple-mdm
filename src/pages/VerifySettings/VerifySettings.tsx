@@ -1,13 +1,8 @@
 import React, { useMemo, useState, useCallback } from "react";
 import get from "lodash/get";
 import styled from "styled-components";
-import {
-  P1,
-  Stack,
-  useDeskproAppClient,
-  useDeskproAppEvents,
-} from "@deskpro/app-sdk";
-import { TSpan } from "@deskpro/deskpro-ui";
+import { P1, Stack, TSpan } from "@deskpro/deskpro-ui";
+import { useDeskproAppClient, useDeskproAppEvents } from "@deskpro/app-sdk";
 import { getCurrentAccountService } from "../../services/simple-mdm";
 import { Button } from "../../components/common";
 import { nbsp } from "../../constants";

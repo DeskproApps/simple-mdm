@@ -1,6 +1,6 @@
 import { faSearch, faTimes, faSpinner } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { Input, IconButton } from "@deskpro/app-sdk";
+import { Input, IconButton } from "@deskpro/deskpro-ui";
 import { Label } from "../Label";
 import type { FC } from "react";
 import type { InputProps, AnyIcon } from "@deskpro/deskpro-ui";
@@ -40,7 +40,7 @@ const Search: FC<Props> = ({
         : faSearch as AnyIcon
       }
       rightIcon={(
-        <IconButton icon={faTimes as AnyIcon} minimal onClick={onClear}/>
+        <IconButton minimal icon={faTimes} onClick={onClear} />
       )}
     />
   </Label>

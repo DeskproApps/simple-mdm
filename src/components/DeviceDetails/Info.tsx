@@ -1,7 +1,7 @@
 import get from "lodash/get";
-import { Title } from "@deskpro/app-sdk";
+import { Title, Property } from "@deskpro/app-sdk";
 import { getUsersFullName } from "../../utils";
-import { Container, Property } from "../common";
+import { Container } from "../common";
 import { nbsp } from "../../constants";
 import type { FC } from "react";
 import type { Maybe } from "../../types";

@@ -6,18 +6,20 @@ import {
   useDeskproLatestAppContext,
 } from "@deskpro/app-sdk";
 import { deleteEntityService } from "../services/deskpro";
+import { useAsyncError } from "../hooks";
 import type { UserContext } from "../types";
 import type { Device } from "../services/simple-mdm/types";
 
-type UseUnlinkDevice = () => {
+export type Result = {
   isLoading: boolean,
   unlinkDevice: (deviceId?: Device["id"]) => void,
 };
 
-const useUnlinkDevice: UseUnlinkDevice = () => {
+const useUnlinkDevice = (): Result => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
   const { context } = useDeskproLatestAppContext() as { context: UserContext };
+  const { asyncErrorHandler } = useAsyncError();
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const dpUserId = useMemo(() => get(context, ["data", "user", "id"]), [context]);
 
@@ -35,8 +37,9 @@ const useUnlinkDevice: UseUnlinkDevice = () => {
       .then(() => {
         setIsLoading(false);
         navigate("/home");
-      });
-  }, [client, dpUserId, navigate]);
+      })
+      .catch(asyncErrorHandler);
+  }, [client, dpUserId, navigate, asyncErrorHandler]);
 
   return { isLoading, unlinkDevice }
 };

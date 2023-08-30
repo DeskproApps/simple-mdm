@@ -1,0 +1,229 @@
+{
+  "data": [
+    {
+      "type": "device",
+      "id": 101,
+      "attributes": {
+        "name": "Armen's macbook",
+        "last_seen_at": "2023-08-29T19:13:34.000Z",
+        "last_seen_ip": "127.0.0.2",
+        "enrolled_at": "2023-08-29T17:13:36.000Z",
+        "status": "enrolled",
+        "enrollment_channels": [
+          "device",
+          "user"
+        ],
+        "device_name": "Armen's macbook device name",
+        "auto_admin_name": null,
+        "os_version": "13.4.1",
+        "build_version": "22F82",
+        "model_name": "MacBook Pro (16-inch, 2019)",
+        "model": "MacBookPro16,1",
+        "product_name": "MacBookPro16,1",
+        "unique_identifier": "unique_identifier-5DBEFC944BD8",
+        "serial_number": "1234567890",
+        "processor_architecture": "Intel",
+        "imei": null,
+        "meid": null,
+        "device_capacity": 1000.0,
+        "available_device_capacity": 814.0,
+        "battery_level": "83%",
+        "modem_firmware_version": null,
+        "iccid": null,
+        "bluetooth_mac": "A1:B1:C1:D1:E1:F1",
+        "ethernet_macs": [
+          "a1:b1:c1:d1:e1:f1"
+        ],
+        "wifi_mac": "a1:b1:c1:d1:e1:f1",
+        "current_carrier_network": null,
+        "sim_carrier_network": null,
+        "subscriber_carrier_network": null,
+        "carrier_settings_version": null,
+        "phone_number": null,
+        "voice_roaming_enabled": null,
+        "data_roaming_enabled": null,
+        "is_roaming": null,
+        "subscriber_mcc": null,
+        "subscriber_mnc": null,
+        "simmnc": null,
+        "current_mcc": null,
+        "current_mnc": null,
+        "hardware_encryption_caps": null,
+        "passcode_present": null,
+        "passcode_compliant": null,
+        "passcode_compliant_with_profiles": null,
+        "is_supervised": true,
+        "is_dep_enrollment": false,
+        "dep_enrolled": false,
+        "dep_assigned": false,
+        "is_user_approved_enrollment": true,
+        "is_device_locator_service_enabled": null,
+        "is_do_not_disturb_in_effect": null,
+        "personal_hotspot_enabled": null,
+        "itunes_store_account_is_active": true,
+        "cellular_technology": null,
+        "last_cloud_backup_date": null,
+        "is_activation_lock_enabled": true,
+        "is_cloud_backup_enabled": false,
+        "filevault_enabled": true,
+        "filevault_recovery_key": null,
+        "lost_mode_enabled": false,
+        "firmware_password_enabled": false,
+        "recovery_lock_password_enabled": false,
+        "remote_desktop_enabled": true,
+        "supplemental_build_version": "22F770820d",
+        "supplemental_os_version_extra": "(c)",
+        "user_enrollment": false,
+        "firmware_password": null,
+        "recovery_lock_password": null,
+        "firewall": {
+          "enabled": false,
+          "block_all_incoming": false,
+          "stealth_mode": false
+        },
+        "system_integrity_protection_enabled": true,
+        "os_update": {
+          "automatic_os_installation_enabled": false,
+          "automatic_app_installation_enabled": false,
+          "automatic_check_enabled": null,
+          "automatic_security_updates_enabled": true,
+          "background_download_enabled": true,
+          "catalog_url": "https://catalog_url.apple.com/content/catalogs/others/index.gz",
+          "default_catalog": true,
+          "perform_periodic_check": null,
+          "previous_scan_date": "2023-08-29T07:04:08.000Z",
+          "previous_scan_result": "2"
+        },
+        "service_subscriptions": [],
+        "location_latitude": null,
+        "location_longitude": null,
+        "location_accuracy": null,
+        "location_updated_at": null
+      },
+      "relationships": {
+        "device_group": {
+          "data": {
+            "type": "device_group",
+            "id": 301
+          }
+        },
+        "custom_attribute_values": {
+          "data": []
+        }
+      }
+    },
+    {
+      "type": "device",
+      "id": 102,
+      "attributes": {
+        "name": "Daria's macbook pro '13",
+        "last_seen_at": "2023-08-29T19:18:55.000Z",
+        "last_seen_ip": "127.0.0.3",
+        "enrolled_at": "2023-08-29T19:18:14.000Z",
+        "status": "enrolled",
+        "enrollment_channels": [
+          "device",
+          "user"
+        ],
+        "device_name": "Daria's macbook device name",
+        "auto_admin_name": null,
+        "os_version": "13.2.1",
+        "build_version": "22D68",
+        "model_name": "MacBook Pro (14-inch, M1, 2021)",
+        "model": "MacBookPro18,3",
+        "product_name": "MacBookPro18,3",
+        "unique_identifier": "unique_identifier-41A7B1AE70FB",
+        "serial_number": "0987654321",
+        "processor_architecture": "Apple Silicon",
+        "imei": null,
+        "meid": null,
+        "device_capacity": 494.0,
+        "available_device_capacity": 229.0,
+        "battery_level": null,
+        "modem_firmware_version": null,
+        "iccid": null,
+        "bluetooth_mac": "A2:B2:C2:D2:E2:F2",
+        "ethernet_macs": [
+          "a2:b2:c2:d2:e2:f2"
+        ],
+        "wifi_mac": "a2:b2:c2:d2:e2:f2",
+        "current_carrier_network": null,
+        "sim_carrier_network": null,
+        "subscriber_carrier_network": null,
+        "carrier_settings_version": null,
+        "phone_number": null,
+        "voice_roaming_enabled": null,
+        "data_roaming_enabled": null,
+        "is_roaming": null,
+        "subscriber_mcc": null,
+        "subscriber_mnc": null,
+        "simmnc": null,
+        "current_mcc": null,
+        "current_mnc": null,
+        "hardware_encryption_caps": null,
+        "passcode_present": null,
+        "passcode_compliant": null,
+        "passcode_compliant_with_profiles": null,
+        "is_supervised": true,
+        "is_dep_enrollment": false,
+        "dep_enrolled": false,
+        "dep_assigned": false,
+        "is_user_approved_enrollment": true,
+        "is_device_locator_service_enabled": null,
+        "is_do_not_disturb_in_effect": null,
+        "personal_hotspot_enabled": null,
+        "itunes_store_account_is_active": true,
+        "cellular_technology": null,
+        "last_cloud_backup_date": null,
+        "is_activation_lock_enabled": false,
+        "is_cloud_backup_enabled": false,
+        "filevault_enabled": false,
+        "filevault_recovery_key": null,
+        "lost_mode_enabled": false,
+        "firmware_password_enabled": false,
+        "recovery_lock_password_enabled": false,
+        "remote_desktop_enabled": true,
+        "supplemental_build_version": "22D68",
+        "supplemental_os_version_extra": null,
+        "user_enrollment": false,
+        "firmware_password": null,
+        "recovery_lock_password": null,
+        "firewall": {
+          "enabled": false,
+          "block_all_incoming": false,
+          "stealth_mode": false
+        },
+        "system_integrity_protection_enabled": true,
+        "os_update": {
+          "automatic_os_installation_enabled": true,
+          "automatic_app_installation_enabled": false,
+          "automatic_check_enabled": null,
+          "automatic_security_updates_enabled": true,
+          "background_download_enabled": true,
+          "catalog_url": "catalog_url.apple.com/content/catalogs/others/index.gz",
+          "default_catalog": true,
+          "perform_periodic_check": null,
+          "previous_scan_date": "2023-08-28T13:22:33.000Z",
+          "previous_scan_result": "2"
+        },
+        "service_subscriptions": [],
+        "location_latitude": null,
+        "location_longitude": null,
+        "location_accuracy": null,
+        "location_updated_at": null
+      },
+      "relationships": {
+        "device_group": {
+          "data": {
+            "type": "device_group",
+            "id": 301
+          }
+        },
+        "custom_attribute_values": {
+          "data": []
+        }
+      }
+    }
+  ],
+  "has_more": false
+}

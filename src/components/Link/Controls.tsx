@@ -2,10 +2,10 @@ import size from "lodash/size";
 import { Stack } from "@deskpro/deskpro-ui";
 import { Button } from "../common";
 import type { FC } from "react";
+import type { Device } from "../../services/simple-mdm/types";
 
 type Props = {
-  // eslint-disable-next-line
-  selectedDevices: any[],
+  selectedDevices: Device[],
   isSubmitting: boolean,
   onLinkDevices: () => void,
   onCancel: () => void,

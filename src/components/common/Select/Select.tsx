@@ -6,16 +6,16 @@ import {
   faCaretDown,
   faExternalLinkAlt,
 } from "@fortawesome/free-solid-svg-icons";
-import { DivAsInput } from "@deskpro/deskpro-ui";
-import { Dropdown } from "@deskpro/app-sdk";
+import { Dropdown, DivAsInput } from "@deskpro/deskpro-ui";
 import type { ReactNode } from "react";
 import type {
   AnyIcon,
   LabelProps,
+  DropdownProps,
   DropdownItemType,
+  DropdownTargetProps,
   DivAsInputWithDisplayProps,
 } from "@deskpro/deskpro-ui";
-import type { DropdownTargetProps, DropdownProps } from "@deskpro/app-sdk";
 import type { Option, Maybe } from "../../../types";
 import size from "lodash/size";
 

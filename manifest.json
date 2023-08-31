@@ -23,6 +23,14 @@
       "isRequired": true,
       "isBackendOnly": true,
       "order": 10
+    },
+    "verify_settings": {
+      "title": "",
+      "type": "app_embedded",
+      "options": { "entrypoint": "#/admin/verify_settings" },
+      "isRequired": false,
+      "isBackendOnly": false,
+      "order": 20
     }
   },
   "proxy": {

@@ -1,7 +1,7 @@
 import get from "lodash/get";
-import { Title } from "@deskpro/app-sdk";
+import { Title, Property } from "@deskpro/app-sdk";
 import { getUsersFullName } from "../../utils";
-import { Container, Property } from "../common";
+import { Container, SimpleMDMLogo } from "../common";
 import { nbsp } from "../../constants";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
@@ -18,6 +18,8 @@ const Info: FC<Props> = ({ device, users }) => {
       <Title
         marginBottom={10}
         title={get(device, ["attributes", "name"], "-")}
+        icon={<SimpleMDMLogo/>}
+        link={`https://a.simplemdm.com/admin/devices/${get(device, ["id"])}`}
       />
       <Property
         label="Device name"

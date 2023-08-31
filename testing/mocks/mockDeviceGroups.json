@@ -1,0 +1,47 @@
+{
+  "data": [
+    {
+      "type": "device_group",
+      "id": 301,
+      "attributes": {
+        "name": "Default"
+      },
+      "relationships": {
+        "devices": {
+          "data": [
+            {
+              "type": "device",
+              "id": 101
+            },
+            {
+              "type": "device",
+              "id": 102
+            },
+            {
+              "type": "device",
+              "id": 103
+            }
+          ]
+        }
+      }
+    },
+    {
+      "type": "device_group",
+      "id": 302,
+      "attributes": {
+        "name": "Deskpro Group"
+      },
+      "relationships": {
+        "devices": {
+          "data": [
+            {
+              "type": "device",
+              "id": 105
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "has_more": false
+}

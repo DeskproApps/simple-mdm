@@ -1,9 +1,6 @@
 import type { To, ParamKeyValuePair } from "react-router-dom";
-import type {
-  Context,
-  IDeskproClient,
-  DropdownValueType,
-} from "@deskpro/app-sdk";
+import type { DropdownValueType } from "@deskpro/deskpro-ui";
+import type { Context, IDeskproClient } from "@deskpro/app-sdk";
 import type { Device } from "./services/simple-mdm/types";
 
 /** Common types */
@@ -30,12 +27,17 @@ export type RequestParams = {
   data?: any,
   headers?: Dict<string>,
   queryParams?: string|Dict<string>|ParamKeyValuePair[],
+  settings?: Maybe<Settings>,
 };
 
 export type Request = <T>(
   client: IDeskproClient,
   params: RequestParams,
 ) => Promise<{ data: T, has_more: boolean }>;
+
+export type Settings = {
+  api_key?: string,
+};
 
 /** Deskpro types */
 export type DeskproUser = {

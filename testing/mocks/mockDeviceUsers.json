@@ -1,0 +1,21 @@
+{
+  "data": [
+    {
+      "type": "device_user",
+      "id": 201,
+      "attributes": {
+        "username": "armen",
+        "full_name": "Armen Tamzarian",
+        "uid": 501,
+        "user_guid": "user-guid-201",
+        "data_quota": null,
+        "data_used": null,
+        "data_to_sync": false,
+        "secure_token": true,
+        "logged_in": true,
+        "mobile_account": false
+      }
+    }
+  ],
+  "has_more": false
+}

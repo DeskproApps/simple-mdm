@@ -4,6 +4,7 @@ import { useDebouncedCallback } from "use-debounce";
 import { match } from "ts-pattern";
 import {
   LoadingSpinner,
+  useDeskproElements,
   useDeskproAppClient,
   useDeskproAppEvents,
 } from "@deskpro/app-sdk";
@@ -12,6 +13,7 @@ import { useUnlinkDevice } from "./hooks";
 import {
   HomePage,
   LinkPage,
+  VerifySettings,
   LoadingAppPage,
   DeviceDetailsPage,
 } from "./pages";
@@ -43,6 +45,10 @@ const App: FC = () => {
     onElementEvent: debounceElementEvent,
   }, [client]);
 
+  useDeskproElements(({ registerElement }) => {
+    registerElement("refresh", { type: "refresh_button" });
+  });
+
   if (!client || isLoadingUnlink) {
     return (
       <LoadingSpinner/>
@@ -52,6 +58,7 @@ const App: FC = () => {
   return (
     <>
       <Routes>
+        <Route path="/admin/verify_settings" element={<VerifySettings/>} />
         <Route path="/link" element={<LinkPage/>} />
         <Route path="/home" element={<HomePage/>} />
         <Route path="/device/:deviceId" element={<DeviceDetailsPage/>} />

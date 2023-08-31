@@ -1,3 +1,4 @@
+import { HorizontalDivider } from "@deskpro/app-sdk";
 import { Info } from "./Info";
 import { Enrollment } from "./Enrollment";
 import type { FC } from "react";
@@ -13,6 +14,7 @@ const DeviceDetails: FC<Props> = ({ device, users }) => {
   return (
     <>
       <Info device={device} users={users} />
+      <HorizontalDivider/>
       <Enrollment device={device} />
     </>
   );

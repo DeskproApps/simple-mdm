@@ -1,5 +1,6 @@
 import "regenerator-runtime/runtime";
 import "@testing-library/jest-dom/extend-expect";
+import "intersection-observer";
 // eslint-disable-next-line @typescript-eslint/ban-ts-comment
 // @ts-ignore
 import { TextDecoder, TextEncoder } from "util";
@@ -54,4 +55,5 @@ jest.mock("@deskpro/app-sdk", () => ({
   },
   useDeskproAppTheme: () => ({ theme: lightTheme }),
   proxyFetch: async () => fetch,
+  LoadingSpinner: () => <>Loading...</>,
 }));

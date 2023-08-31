@@ -1,9 +1,9 @@
 import get from "lodash/get";
 import capitalize from "lodash/capitalize";
-import { Title } from "@deskpro/app-sdk";
+import { Title, Property } from "@deskpro/app-sdk";
 import { format } from "../../utils/date";
 import { DATE_FORMAT, TIME_FORMAT } from "../../constants";
-import { Container, Property } from "../common";
+import { Container } from "../common";
 import type { FC } from "react";
 import type { Maybe } from "../../types";
 import type { Device } from "../../services/simple-mdm/types";

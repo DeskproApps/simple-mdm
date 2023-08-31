@@ -1,4 +1,5 @@
-import { Stack } from "@deskpro/app-sdk";
+import get from "lodash/get";
+import { Stack } from "@deskpro/deskpro-ui";
 import { SimpleMDMError } from "../../services/simple-mdm";
 import { ErrorBlock } from "./ErrorBlock";
 import { Container } from "../common";
@@ -10,14 +11,14 @@ type Props = Omit<FallbackProps, "error"> & {
 };
 
 const ErrorFallback: FC<Props> = ({ error }) => {
-  const message = "There was an error!";
+  let message = "There was an error!";
   const button = null;
 
   // eslint-disable-next-line no-console
   console.error(error);
 
   if (error instanceof SimpleMDMError) {
-    //...
+    message = get(error, ["data","errors", 0, "title"], message);
   }
 
   return (

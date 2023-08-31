@@ -1,8 +1,8 @@
 import { useMemo, useCallback } from "react";
 import get from "lodash/get";
-import { Title } from "@deskpro/app-sdk";
+import { Title, TwoProperties } from "@deskpro/app-sdk";
 import { nbsp } from "../../constants";
-import { Link, SimpleMDMLogo, TwoProperties } from "../common";
+import { Link, SimpleMDMLogo } from "../common";
 import type { FC } from "react";
 import type { Device } from "../../services/simple-mdm/types";
 

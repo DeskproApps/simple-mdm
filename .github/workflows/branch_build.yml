@@ -84,7 +84,7 @@ jobs:
             milestone=$(echo "$pull_request_info" | jq -r '.labels[].name' | grep -E 'major-version|minor-version' | head -1)
           fi
 
-          echo "milestone=${milestone}"
+          echo "milestone=${milestone}" >> $GITHUB_OUTPUT
 
       - name: Bump Version
         run: |

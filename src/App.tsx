@@ -51,21 +51,18 @@ const App: FC = () => {
 
   if (!client || isLoadingUnlink) {
     return (
-      <LoadingSpinner/>
+      <LoadingSpinner />
     );
   }
 
   return (
-    <>
-      <Routes>
-        <Route path="/admin/verify_settings" element={<VerifySettings/>} />
-        <Route path="/link" element={<LinkPage/>} />
-        <Route path="/home" element={<HomePage/>} />
-        <Route path="/device/:deviceId" element={<DeviceDetailsPage/>} />
-        <Route index element={<LoadingAppPage/>} />
-      </Routes>
-      <br/><br/><br/>
-    </>
+    <Routes>
+      <Route path="/admin/verify_settings" element={<VerifySettings />} />
+      <Route path="/link" element={<LinkPage />} />
+      <Route path="/home" element={<HomePage />} />
+      <Route path="/device/:deviceId" element={<DeviceDetailsPage />} />
+      <Route index element={<LoadingAppPage />} />
+    </Routes>
   );
 }
 

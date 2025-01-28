@@ -1,4 +1,3 @@
-import get from "lodash/get";
 import { useQueryWithClient } from "@deskpro/app-sdk";
 import { QueryKey } from "../../query";
 import { searchDevicesService, getDeviceGroupsService } from "../../services/simple-mdm";
@@ -32,8 +31,8 @@ const useSearch: UseSearch = (q) => {
 
   return {
     isLoading: [devices].some(({ isFetching }) => isFetching),
-    devices: get(devices, ["data", "data"], []) || [],
-    deviceGroups: get(deviceGroups, ["data", "data"], []) || [],
+    devices: devices.data?.data?? [],
+    deviceGroups: deviceGroups.data?.data ?? [],
   };
 };
 

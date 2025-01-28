@@ -1,5 +1,4 @@
 import { useState, useCallback, useMemo } from "react";
-import get from "lodash/get";
 import { useNavigate } from "react-router-dom";
 import {
   useDeskproAppClient,
@@ -21,10 +20,10 @@ const useUnlinkDevice = (): Result => {
   const { context } = useDeskproLatestAppContext() as { context: UserContext };
   const { asyncErrorHandler } = useAsyncError();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const dpUserId = useMemo(() => get(context, ["data", "user", "id"]), [context]);
+  const dpUserId = context.data?.user.id;
 
   const unlinkDevice = useCallback((deviceId?: Device["id"]) => {
-    if (!client || !deviceId) {
+    if (!client || !deviceId || !dpUserId) {
       return;
     }
 

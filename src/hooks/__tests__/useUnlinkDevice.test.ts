@@ -1,8 +1,9 @@
-import { cleanup, renderHook, act } from "@testing-library/react";
+import { cleanup, renderHook } from "@testing-library/react";
 import { useNavigate } from "react-router-dom";
 import { deleteEntityService } from "../../services/deskpro";
 import { useUnlinkDevice } from "../useUnlinkDevice";
 import type { Result } from "../useUnlinkDevice";
+import { act } from "react";
 
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),

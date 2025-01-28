@@ -1,6 +1,7 @@
 /* eslint-disable no-console */
-import { renderHook, act } from "@testing-library/react";
+import { renderHook } from "@testing-library/react";
 import { useAsyncError } from '../useAsyncError';
+import { act } from "react";
 
 describe("useUnlinkTask", () => {
   let originalConsoleError: () => void;

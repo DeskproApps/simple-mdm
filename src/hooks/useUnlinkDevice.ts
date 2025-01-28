@@ -6,7 +6,7 @@ import {
 } from "@deskpro/app-sdk";
 import { deleteEntityService } from "../services/deskpro";
 import { useAsyncError } from "../hooks";
-import type { UserContext } from "../types";
+import type { ContextData } from "../types";
 import type { Device } from "../services/simple-mdm/types";
 
 export type Result = {
@@ -17,13 +17,13 @@ export type Result = {
 const useUnlinkDevice = (): Result => {
   const navigate = useNavigate();
   const { client } = useDeskproAppClient();
-  const { context } = useDeskproLatestAppContext() as { context: UserContext };
+  const { context } = useDeskproLatestAppContext<ContextData, unknown>() ;
   const { asyncErrorHandler } = useAsyncError();
   const [isLoading, setIsLoading] = useState<boolean>(false);
-  const dpUserId = context.data?.user.id;
+  const dpUserId = context?.data?.user.id;
 
   const unlinkDevice = useCallback((deviceId?: Device["id"]) => {
-    if (!client || !deviceId || !dpUserId) {
+    if (!client || !deviceId) {
       return;
     }
 
@@ -31,7 +31,7 @@ const useUnlinkDevice = (): Result => {
 
     Promise
       .all([
-        deleteEntityService(client, dpUserId, deviceId),
+        deleteEntityService(client, dpUserId ?? "", deviceId),
       ])
       .then(() => {
         setIsLoading(false);

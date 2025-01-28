@@ -1,7 +1,11 @@
-import { cleanup, act } from "@testing-library/react";
+import { cleanup } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import { render, mockDeviceGroups } from "../../../../testing";
 import { DeviceGroups } from "../DeviceGroups";
+import { act } from "react";
+
+Object.defineProperty(window, "scrollTo", { value: jest.fn(), writable: true });
+Object.defineProperty(global.Element.prototype, "scrollTo", { value: jest.fn() });
 
 describe("Link", () => {
   describe("DeviceGroups", () => {

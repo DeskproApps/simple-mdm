@@ -1,6 +1,4 @@
-import get from "lodash/get";
 import size from "lodash/size";
-import { useMemo } from "react";
 import {
   useQueryWithClient,
   useDeskproLatestAppContext,

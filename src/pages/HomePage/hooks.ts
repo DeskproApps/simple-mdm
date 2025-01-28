@@ -24,7 +24,7 @@ const useDevices: UseDevices = () => {
 
   const linkedIds = useQueryWithClient(
     [QueryKey.LINKED_DEVICES],
-    (client) => getEntityListService(client, dpUserId),
+    (client) => getEntityListService(client, dpUserId ?? ""),
     { enabled: Boolean(dpUserId) }
   );
 

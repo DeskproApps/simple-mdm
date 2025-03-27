@@ -2,7 +2,7 @@
   "name": "@deskpro-apps/simple-mdm",
   "title": "SimpleMDM",
   "description": "View your enrolled Apple mobile devices while interacting with tickets to make management and support easier.",
-  "version": "1.1.15",
+  "version": "1.1.16",
   "scope": "agent",
   "isSingleInstall": false,
   "hasDevMode": true,

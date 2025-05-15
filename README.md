@@ -12,7 +12,7 @@
   <p>SimpleMDM is a mobile device management solution designed to help businesses automate and manage tasks across Apple devices.</p>
   <a href='https://support.deskpro.com/ga/guides/developers/anatomy-of-an-app' target='_blank'>Deskpro Apps Documentation</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
-  <a href='https://simple-mdm.dev/docs/api' target='_blank'>SimpleMDM API Documentation</a>
+  <a href='https://api.simplemdm.com' target='_blank'>SimpleMDM API Documentation</a>
   <span>&nbsp;&nbsp;•&nbsp;&nbsp;</span>
   <a href='./SETUP.md' target='_blank'>SimpleMDM App Setup Guide</a>
   <br />

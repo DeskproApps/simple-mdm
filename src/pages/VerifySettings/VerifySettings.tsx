@@ -1,26 +1,26 @@
-import React, { useMemo, useState, useCallback } from "react";
+import { Button } from "../../components/common";
+import { DeskproAppTheme, useDeskproAppClient, useDeskproAppEvents } from "@deskpro/app-sdk";
+import { getCurrentAccountService } from "../../services/simple-mdm";
+import { nbsp } from "../../constants";
+import { P1, Stack, TSpan } from "@deskpro/deskpro-ui";
+import { useMemo, useState, useCallback } from "react";
 import get from "lodash/get";
 import styled from "styled-components";
-import { P1, Stack, TSpan } from "@deskpro/deskpro-ui";
-import { useDeskproAppClient, useDeskproAppEvents } from "@deskpro/app-sdk";
-import { getCurrentAccountService } from "../../services/simple-mdm";
-import { Button } from "../../components/common";
-import { nbsp } from "../../constants";
+import type { Account } from "../../services/simple-mdm/types";
 import type { FC } from "react";
 import type { Maybe, Settings } from "../../types";
-import type { Account } from "../../services/simple-mdm/types";
 
-const Invalid = styled(TSpan)`
+const Invalid = styled(TSpan) <DeskproAppTheme>`
   color: ${({ theme }) => theme.colors.red100};
 `;
 
-const Valid = styled.span`
+const Valid = styled.span<DeskproAppTheme>`
   color: ${({ theme }) => theme.colors.grey100};
 `;
 
 const VerifySettings: FC = () => {
   const { client } = useDeskproAppClient();
-  const [currentAccount, setCurrentAccount] = useState<Account|null>(null);
+  const [currentAccount, setCurrentAccount] = useState<Account | null>(null);
   const [settings, setSettings] = useState<Maybe<Settings>>(null);
   const [isLoading, setIsLoading] = useState<boolean>(false);
   const [error, setError] = useState<string>("");

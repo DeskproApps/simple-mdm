@@ -39,7 +39,12 @@
       {
         "url": "https://a.simplemdm.com/api/v1/.*",
         "methods": ["GET"],
-        "timeout": 20
+        "timeout": 20,
+        "settingsInjection": {
+          "api_key": {
+            "header": ["Authorization"]
+          }
+        }
       }
     ]
   }
